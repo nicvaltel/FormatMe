@@ -1,0 +1,10 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "lib:FormatMeBot"
+
+    - path: "app/Main.hs"
+      component: "FormatMeBot:exe:FormatMeBot-exe"
+
+    - path: "test"
+      component: "FormatMeBot:test:FormatMeBot-test"
