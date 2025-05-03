@@ -15,13 +15,16 @@ newtype BotConfig = BotConfig
 envFile :: FilePath
 envFile = "app-config.env"
 
+dbFile :: FilePath
+dbFile = "db.env"
+
 main :: IO ()
 main = do
   cfg <- getCfg <$> parseFile envFile
   case cfg of
     Left err -> error err
     Right BotConfig{botToken} -> do
-      Bot.runBot (Token . T.pack $ botToken)
+      Bot.runBot (Token . T.pack $ botToken) dbFile
   where
     getCfg :: [(String, String)] -> Either String BotConfig
     getCfg env = do
