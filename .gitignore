@@ -2,3 +2,10 @@
 dist-newstyle/
 *~
 **/*.env
+FormatMeBot-exe
+deploy/app/dist-newstyle
+deploy/src
+deploy/db
+deploy/vps
+deploy/run.py
+
